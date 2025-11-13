@@ -1,0 +1,63 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --font-primary: 'Karla', sans-serif;
+    /* primary colors */
+    --blue-thick: hsl(256, 26%, 20%);
+    --blue-light: hsl(216, 30%, 68%);
+
+    /* neutral colors */
+    --gray-950: hsl(270, 9%, 17%);
+    --gray-700: hsl(273, 4%, 51%);
+    --gray-50:  hsl(0, 0%, 98%);
+}
+
+body {
+    font-family: 'Karla', sans-serif;
+    background-color: var(--gray-50);
+    color: var(--gray-700);
+    line-height: 1.6;
+    margin: auto;
+}
+
+nav {
+    background-color: hsl(0, 0%, 100%);
+    padding: 2rem 3rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+
+.menu li {
+    list-style: none;
+    display: inline;
+}
+
+.menu a {
+    text-decoration: none;
+    color: var(--gray-700);
+    font-weight: 500;
+    transition: color 0.3s ease;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+.menu a:hover {
+    color: var(--gray-950);
+    border: 1px solid var(--blue-thick);
+    padding: 0.5rem 1rem;
+}
