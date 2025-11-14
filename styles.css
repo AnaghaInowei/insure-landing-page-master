@@ -5,7 +5,7 @@
 }
 
 :root {
-    --font-primary: 'Karla', sans-serif;
+    --font-primary: "DM Serif Display", serif;;
     /* primary colors */
     --blue-thick: hsl(256, 26%, 20%);
     --blue-light: hsl(216, 30%, 68%);
@@ -17,21 +17,24 @@
 }
 
 body {
-    font-family: 'Karla', sans-serif;
+    
     background-color: var(--gray-50);
     color: var(--gray-700);
     line-height: 1.6;
-    margin: auto;
+    margin: auto 0;
 }
+
+/* navbar styling */
 
 nav {
     background-color: hsl(0, 0%, 100%);
-    padding: 2rem 3rem;
+    padding: 2rem 8rem;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     display: flex;
     justify-content: space-between;
     align-items: center;
-
+    position: relative;
+    z-index: 2;
 }
 
 .menu {
@@ -51,13 +54,162 @@ nav {
     text-decoration: none;
     color: var(--gray-700);
     font-weight: 500;
-    transition: color 0.3s ease;
     cursor: pointer;
     font-size: 1.2rem;
 }
 
+@keyframes menu-color {
+    from {
+        color: var(--gray-700);
+        
+
+    }
+    to {
+        color: var(--gray-950);
+    }
+    
+}
+
 .menu a:hover {
     color: var(--gray-950);
-    border: 1px solid var(--blue-thick);
+    border: 2px solid var(--blue-thick);
     padding: 0.5rem 1rem;
+    transition: all 0.3s ease  ;
+}
+
+/* header */
+
+header {
+    text-align: center;
+    /* add extra bottom padding so content below isn't hidden by the overlapping image */
+    padding: 5rem 1rem ;
+    padding-bottom: 6rem;
+    background-color: var(--blue-thick);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* make header a positioned container for the absolutely positioned image */
+    position: relative;
+}
+
+header img {
+    position: absolute;
+    right: 0;
+    bottom: 2rem;
+    /* top: 10px; */
+    z-index: 1;
+    max-width: 25rem;
+    overflow: hidden;
+    
+}
+
+.header-pattern-left {
+    position: absolute;
+    left: 0;
+    top: 20rem;
+    margin-right: 20rem;
+    z-index: 1;
+    width: 15%;
+}
+
+.header-content {
+    color: var(--gray-50);
+    max-width: 550px;
+    text-align: left;
+    padding-bottom: 3rem;
+    padding-left: 7rem;
+    align-self: center;
+}
+
+.header-content h1 {
+    font-family: var(--font-primary);
+    max-width: 25rem;
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+    letter-spacing: .2rem;
+}
+
+.header-content img {
+    display: block;
+    margin-bottom: 2rem;
+    z-index: 2;
+}
+
+.header-image {
+     position: absolute;
+     right: 3rem;
+     bottom: -10rem;
+     top: 6rem;
+     margin-right: 5rem;
+     /* transform: translateY(70%); */
+    z-index: 1;
+    /* background-image: url(./images/bg-pattern-intro-right-desktop.svg); */
+}
+
+.header-image img {
+    width: 500px;
+    max-width: 90vw;
+    height: auto;
+    border-radius: 10px;
+    display: block;
+    transition: all 0.3s ease;
+}
+
+
+@media (max-width: 768px) {
+    header {
+        padding: 6rem 1.5rem 3rem;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .header-image {
+        position: static;
+        transform: none;
+        right: auto;
+        top: auto;
+        margin-top: 2rem;
+        z-index: 1;
+    }
+
+    .header-image img {
+        width: 100%;
+        max-width: 480px;
+    }
+} 
+
+.header-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    line-height: 1.5;
+}
+
+.btn {
+    border: 2px solid var(--gray-50);
+    padding: 0.8rem 2rem;
+    text-decoration: none;
+    color: var(--gray-50);
+    cursor: pointer;
+    animation: btn 0.6s ease-out forwards;
+}
+
+@keyframes btn {
+  0% {
+    transform: translateX(-80px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+
+
+
+.btn:hover {
+    background-color: var(--gray-50);
+    color: var(--blue-thick);
+    transition: all 0.3s ease;
 }
